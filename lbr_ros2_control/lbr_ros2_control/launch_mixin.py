@@ -6,7 +6,7 @@ from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 
 
-class LBRROS2ControlMixin:
+class LBRSystemInterfaceMixin:
     @staticmethod
     def arg_ctrl_cfg_pkg() -> DeclareLaunchArgument:
         return DeclareLaunchArgument(
@@ -19,7 +19,7 @@ class LBRROS2ControlMixin:
     def arg_ctrl_cfg() -> DeclareLaunchArgument:
         return DeclareLaunchArgument(
             name="ctrl_cfg",
-            default_value="config/lbr_controllers.yaml",
+            default_value="config/lbr_controllers.yaml", #"config/lbr_controllers.yaml"
             description="Relative path from ctrl_cfg_pkg to the controllers.",
         )
 
@@ -72,21 +72,38 @@ class LBRROS2ControlMixin:
         )
 
     @staticmethod
-    def node_controller_spawner(
+    def node_joint_state_broadcaster(
         robot_name: Optional[Union[LaunchConfiguration, str]] = None,
-        controller: Optional[Union[LaunchConfiguration, str]] = None,
         **kwargs,
     ) -> Node:
         if robot_name is None:
             robot_name = LaunchConfiguration("robot_name", default="lbr")
-        if controller is None:
-            controller = LaunchConfiguration("ctrl")
         return Node(
             package="controller_manager",
             executable="spawner",
             output="screen",
             arguments=[
-                controller,
+                "joint_state_broadcaster",
+                "--controller-manager",
+                "controller_manager",
+            ],
+            namespace=robot_name,
+            **kwargs,
+        )
+
+    @staticmethod
+    def node_controller(
+        robot_name: Optional[Union[LaunchConfiguration, str]] = None,
+        **kwargs,
+    ) -> Node:
+        if robot_name is None:
+            robot_name = LaunchConfiguration("robot_name", default="lbr")
+        return Node(
+            package="controller_manager",
+            executable="spawner",
+            output="screen",
+            arguments=[
+                LaunchConfiguration("ctrl", default="position_trajectory_controller"),
                 "--controller-manager",
                 "controller_manager",
             ],

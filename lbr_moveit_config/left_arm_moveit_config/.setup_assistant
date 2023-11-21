@@ -1,0 +1,25 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: lbr_description
+    relative_path: urdf/left_arm/left_arm.urdf.xacro
+  srdf:
+    relative_path: config/left_arm.srdf
+  package_settings:
+    author_name: Morten
+    author_email: morten-ks@hotmail.com
+    generated_timestamp: 1700051157
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity
+  modified_urdf:
+    xacros:
+      - control_xacro
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity
