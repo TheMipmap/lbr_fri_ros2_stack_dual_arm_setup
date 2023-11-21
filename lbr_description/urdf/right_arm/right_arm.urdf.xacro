@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"
+  name="right">
+  
+    <xacro:include filename="iiwa7_description.urdf.xacro"/>
+  
+    <xacro:arg name="base_frame" default="base_frame" />
+    <xacro:arg name="robot_name" default="lbr" />
+    <xacro:arg name="port_id" default="30201" />
+    <xacro:arg name="sim" default="true" />
+  
+  <!-- fixed to base_frame -->
+    <link name="$(arg base_frame)" />
+
+    <!--joint between {base_frame} and link_0-->
+  <joint name="$(arg base_frame)_joint" type="fixed">
+      <origin
+          xyz="-0.2193 -0.27 0.281"
+          rpy="-0.7854 0 1.5708" />
+      <parent link="$(arg base_frame)" />
+      <child link="link_0" />
+  </joint>
+  
+
+  
+  <xacro:iiwa7 robot_name="$(arg robot_name)" port_id="$(arg port_id)" sim="$(arg sim)" />
+
+  
+  
+</robot>
