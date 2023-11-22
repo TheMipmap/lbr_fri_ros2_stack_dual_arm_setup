@@ -32,18 +32,41 @@
         <joint name="A7" value="0"/>
     </group_state>
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
+    <disable_collisions link1="base_link" link2="camera_link" reason="Never"/>
+    <disable_collisions link1="base_link" link2="camera_mount" reason="Adjacent"/>
+    <disable_collisions link1="base_link" link2="link_0" reason="Never"/>
+    <disable_collisions link1="base_link" link2="link_1" reason="Never"/>
+    <disable_collisions link1="base_link" link2="link_2" reason="Never"/>
+    <disable_collisions link1="base_link" link2="pole_link5_1" reason="Adjacent"/>
+    <disable_collisions link1="base_link" link2="pole_link5_2" reason="Adjacent"/>
+    <disable_collisions link1="base_link" link2="pole_link6_1" reason="Never"/>
+    <disable_collisions link1="base_link" link2="pole_link6_2" reason="Never"/>
+    <disable_collisions link1="base_link" link2="table" reason="Adjacent"/>
+    <disable_collisions link1="camera_link" link2="camera_mount" reason="Adjacent"/>
+    <disable_collisions link1="camera_link" link2="link_0" reason="Never"/>
+    <disable_collisions link1="camera_link" link2="link_1" reason="Never"/>
+    <disable_collisions link1="camera_link" link2="link_2" reason="Never"/>
+    <disable_collisions link1="camera_link" link2="pole_link5_1" reason="Never"/>
+    <disable_collisions link1="camera_link" link2="pole_link5_2" reason="Never"/>
+    <disable_collisions link1="camera_link" link2="pole_link6_1" reason="Never"/>
+    <disable_collisions link1="camera_link" link2="pole_link6_2" reason="Never"/>
+    <disable_collisions link1="camera_link" link2="table" reason="Never"/>
+    <disable_collisions link1="camera_mount" link2="link_0" reason="Never"/>
+    <disable_collisions link1="camera_mount" link2="link_1" reason="Never"/>
+    <disable_collisions link1="camera_mount" link2="link_2" reason="Never"/>
+    <disable_collisions link1="camera_mount" link2="pole_link5_1" reason="Never"/>
+    <disable_collisions link1="camera_mount" link2="pole_link5_2" reason="Never"/>
+    <disable_collisions link1="camera_mount" link2="pole_link6_1" reason="Never"/>
+    <disable_collisions link1="camera_mount" link2="pole_link6_2" reason="Never"/>
+    <disable_collisions link1="camera_mount" link2="table" reason="Never"/>
     <disable_collisions link1="link_0" link2="link_1" reason="Adjacent"/>
     <disable_collisions link1="link_0" link2="link_2" reason="Never"/>
     <disable_collisions link1="link_0" link2="link_3" reason="Never"/>
     <disable_collisions link1="link_0" link2="link_4" reason="Never"/>
-    <disable_collisions link1="link_0" link2="pole_link1" reason="Never"/>
-    <disable_collisions link1="link_0" link2="pole_link2" reason="Never"/>
-    <disable_collisions link1="link_0" link2="pole_link3" reason="Never"/>
-    <disable_collisions link1="link_0" link2="pole_link4" reason="Never"/>
     <disable_collisions link1="link_0" link2="pole_link5_1" reason="Never"/>
     <disable_collisions link1="link_0" link2="pole_link5_2" reason="Never"/>
-    <disable_collisions link1="link_0" link2="pole_link6_1" reason="Never"/>
-    <disable_collisions link1="link_0" link2="pole_link6_2" reason="Adjacent"/>
+    <disable_collisions link1="link_0" link2="pole_link6_1" reason="Adjacent"/>
+    <disable_collisions link1="link_0" link2="pole_link6_2" reason="Never"/>
     <disable_collisions link1="link_0" link2="table" reason="Never"/>
     <disable_collisions link1="link_1" link2="link_2" reason="Adjacent"/>
     <disable_collisions link1="link_1" link2="link_3" reason="Never"/>
@@ -51,10 +74,6 @@
     <disable_collisions link1="link_1" link2="link_5" reason="Never"/>
     <disable_collisions link1="link_1" link2="link_6" reason="Never"/>
     <disable_collisions link1="link_1" link2="link_7" reason="Never"/>
-    <disable_collisions link1="link_1" link2="pole_link1" reason="Never"/>
-    <disable_collisions link1="link_1" link2="pole_link2" reason="Never"/>
-    <disable_collisions link1="link_1" link2="pole_link3" reason="Never"/>
-    <disable_collisions link1="link_1" link2="pole_link4" reason="Never"/>
     <disable_collisions link1="link_1" link2="pole_link5_1" reason="Never"/>
     <disable_collisions link1="link_1" link2="pole_link5_2" reason="Never"/>
     <disable_collisions link1="link_1" link2="pole_link6_1" reason="Never"/>
@@ -65,10 +84,6 @@
     <disable_collisions link1="link_2" link2="link_5" reason="Never"/>
     <disable_collisions link1="link_2" link2="link_6" reason="Never"/>
     <disable_collisions link1="link_2" link2="link_7" reason="Never"/>
-    <disable_collisions link1="link_2" link2="pole_link1" reason="Never"/>
-    <disable_collisions link1="link_2" link2="pole_link2" reason="Never"/>
-    <disable_collisions link1="link_2" link2="pole_link3" reason="Never"/>
-    <disable_collisions link1="link_2" link2="pole_link4" reason="Never"/>
     <disable_collisions link1="link_2" link2="pole_link5_1" reason="Never"/>
     <disable_collisions link1="link_2" link2="pole_link5_2" reason="Never"/>
     <disable_collisions link1="link_2" link2="pole_link6_1" reason="Never"/>
@@ -78,9 +93,6 @@
     <disable_collisions link1="link_3" link2="link_5" reason="Never"/>
     <disable_collisions link1="link_3" link2="link_6" reason="Never"/>
     <disable_collisions link1="link_3" link2="link_7" reason="Never"/>
-    <disable_collisions link1="link_3" link2="pole_link1" reason="Never"/>
-    <disable_collisions link1="link_3" link2="pole_link2" reason="Never"/>
-    <disable_collisions link1="link_3" link2="pole_link4" reason="Never"/>
     <disable_collisions link1="link_3" link2="pole_link5_1" reason="Never"/>
     <disable_collisions link1="link_3" link2="pole_link5_2" reason="Never"/>
     <disable_collisions link1="link_3" link2="pole_link6_1" reason="Never"/>
@@ -89,47 +101,14 @@
     <disable_collisions link1="link_4" link2="link_5" reason="Adjacent"/>
     <disable_collisions link1="link_4" link2="link_6" reason="Never"/>
     <disable_collisions link1="link_4" link2="link_7" reason="Never"/>
-    <disable_collisions link1="link_4" link2="pole_link1" reason="Never"/>
-    <disable_collisions link1="link_4" link2="pole_link2" reason="Never"/>
-    <disable_collisions link1="link_4" link2="pole_link4" reason="Never"/>
     <disable_collisions link1="link_4" link2="pole_link5_1" reason="Never"/>
     <disable_collisions link1="link_4" link2="pole_link5_2" reason="Never"/>
     <disable_collisions link1="link_4" link2="pole_link6_1" reason="Never"/>
     <disable_collisions link1="link_4" link2="pole_link6_2" reason="Never"/>
     <disable_collisions link1="link_5" link2="link_6" reason="Adjacent"/>
     <disable_collisions link1="link_5" link2="link_7" reason="Never"/>
-    <disable_collisions link1="link_5" link2="pole_link1" reason="Never"/>
-    <disable_collisions link1="link_5" link2="pole_link2" reason="Never"/>
-    <disable_collisions link1="link_5" link2="pole_link5_1" reason="Never"/>
     <disable_collisions link1="link_6" link2="link_7" reason="Adjacent"/>
-    <disable_collisions link1="link_6" link2="pole_link2" reason="Never"/>
-    <disable_collisions link1="link_7" link2="pole_link2" reason="Never"/>
-    <disable_collisions link1="pole_link1" link2="pole_link2" reason="Adjacent"/>
-    <disable_collisions link1="pole_link1" link2="pole_link3" reason="Never"/>
-    <disable_collisions link1="pole_link1" link2="pole_link4" reason="Never"/>
-    <disable_collisions link1="pole_link1" link2="pole_link5_1" reason="Never"/>
-    <disable_collisions link1="pole_link1" link2="pole_link5_2" reason="Never"/>
-    <disable_collisions link1="pole_link1" link2="pole_link6_1" reason="Never"/>
-    <disable_collisions link1="pole_link1" link2="pole_link6_2" reason="Never"/>
-    <disable_collisions link1="pole_link1" link2="table" reason="Adjacent"/>
-    <disable_collisions link1="pole_link2" link2="pole_link3" reason="Adjacent"/>
-    <disable_collisions link1="pole_link2" link2="pole_link4" reason="Never"/>
-    <disable_collisions link1="pole_link2" link2="pole_link5_1" reason="Never"/>
-    <disable_collisions link1="pole_link2" link2="pole_link5_2" reason="Never"/>
-    <disable_collisions link1="pole_link2" link2="pole_link6_1" reason="Never"/>
-    <disable_collisions link1="pole_link2" link2="pole_link6_2" reason="Never"/>
-    <disable_collisions link1="pole_link2" link2="table" reason="Never"/>
-    <disable_collisions link1="pole_link3" link2="pole_link4" reason="Adjacent"/>
-    <disable_collisions link1="pole_link3" link2="pole_link5_1" reason="Never"/>
-    <disable_collisions link1="pole_link3" link2="pole_link5_2" reason="Never"/>
-    <disable_collisions link1="pole_link3" link2="pole_link6_1" reason="Never"/>
-    <disable_collisions link1="pole_link3" link2="pole_link6_2" reason="Never"/>
-    <disable_collisions link1="pole_link3" link2="table" reason="Never"/>
-    <disable_collisions link1="pole_link4" link2="pole_link5_1" reason="Adjacent"/>
-    <disable_collisions link1="pole_link4" link2="pole_link5_2" reason="Adjacent"/>
-    <disable_collisions link1="pole_link4" link2="pole_link6_1" reason="Never"/>
-    <disable_collisions link1="pole_link4" link2="pole_link6_2" reason="Never"/>
-    <disable_collisions link1="pole_link4" link2="table" reason="Never"/>
+    <disable_collisions link1="link_7" link2="pole_link5_2" reason="Never"/>
     <disable_collisions link1="pole_link5_1" link2="pole_link5_2" reason="Never"/>
     <disable_collisions link1="pole_link5_1" link2="pole_link6_1" reason="Adjacent"/>
     <disable_collisions link1="pole_link5_1" link2="pole_link6_2" reason="Never"/>

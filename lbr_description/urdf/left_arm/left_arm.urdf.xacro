@@ -61,25 +61,26 @@
   
   <joint name="table_to_pole" type="fixed">
     <parent link="table"/>
-    <child link="pole_link1"/>
+    <child link="base_link"/>
     <origin xyz="0 -0.35 0.015" rpy="0 0 0"/>
   </joint>
   
-  <link
-    name="pole_link1">
+ 
+ <link
+    name="base_link">
     <inertial>
       <origin
-        xyz="-2.0651E-17 0.006 -3.0598E-17"
+        xyz="-4.60531013034323E-05 0.0269896752933545 0.220110783524606"
         rpy="0 0 0" />
       <mass
-        value="0.67747" />
+        value="6.67768952534525" />
       <inertia
-        ixx="0.0032039"
-        ixy="-2.5621E-20"
-        ixz="1.8363E-19"
-        iyy="0.0063916"
-        iyz="4.6661E-21"
-        izz="0.0032039" />
+        ixx="0.0927060188022499"
+        ixy="-1.15527252193294E-08"
+        ixz="9.95970442619751E-05"
+        iyy="0.120986260169313"
+        iyz="3.8835854033819E-08"
+        izz="0.0446111571845848" />
     </inertial>
     <visual>
       <origin
@@ -87,12 +88,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lbr_description/meshes/iiwa7/pole/pole_link1.STL" />
+          filename="package://lbr_description/meshes/pole/base_link.STL" />
       </geometry>
       <material
         name="">
         <color
-          rgba="0.89412 0.91373 0.92941 1" />
+          rgba="0.894117647058823 0.913725490196078 0.929411764705882 1" />
       </material>
     </visual>
     <collision>
@@ -101,25 +102,25 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lbr_description/meshes/iiwa7/pole/pole_link1.STL" />
+          filename="package://lbr_description/meshes/pole/base_link.STL" />
       </geometry>
     </collision>
   </link>
   <link
-    name="pole_link2">
+    name="camera_mount">
     <inertial>
       <origin
-        xyz="0.08 0.004973 -0.08"
+        xyz="-0.00320794759811641 -0.045 -0.0149674652046672"
         rpy="0 0 0" />
       <mass
-        value="0.66701" />
+        value="0.26247066782014" />
       <inertia
-        ixx="0.0014197"
-        ixy="-1.7809E-21"
-        ixz="-6.3093E-20"
-        iyy="0.0028283"
-        iyz="4.3854E-22"
-        izz="0.0014197" />
+        ixx="0.000291627708890385"
+        ixy="-1.26470935677167E-20"
+        ixz="-2.87105610515067E-05"
+        iyy="0.0003118294834033"
+        iyz="1.66734346017947E-20"
+        izz="0.000247269374096239" />
     </inertial>
     <visual>
       <origin
@@ -127,12 +128,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lbr_description/meshes/iiwa7/pole/pole_link2.STL" />
+          filename="package://lbr_description/meshes/pole/camera_mount.STL" />
       </geometry>
       <material
         name="">
         <color
-          rgba="0.89804 0.91765 0.92941 1" />
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
       </material>
     </visual>
     <collision>
@@ -141,126 +142,51 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lbr_description/meshes/iiwa7/pole/pole_link2.STL" />
+          filename="package://lbr_description/meshes/pole/camera_mount.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="pole_joint1"
+    name="base_to_camera_mount"
     type="fixed">
     <origin
-      xyz="0.08 0.08 0.012"
-      rpy="1.5708 0 3.1416" />
+      xyz="-0.045 0 0.6319"
+      rpy="3.14159265358979 0 -1.5707963267949" />
     <parent
-      link="pole_link1" />
+      link="base_link" />
     <child
-      link="pole_link2" />
+      link="camera_mount" />
     <axis
       xyz="0 0 0" />
   </joint>
   <link
-    name="pole_link3">
+    name="camera_base">
     <inertial>
       <origin
-        xyz="-1.2525E-16 -0.7 -6.7084E-17"
+        xyz="0.00152788225160483 -3.4246869961186E-07 0.0122350480077058"
         rpy="0 0 0" />
       <mass
-        value="2.7358" />
+        value="0.0481481386626754" />
       <inertia
-        ixx="0.083946"
-        ixy="-5.4209E-18"
-        ixz="3.7385E-19"
-        iyy="0.0037448"
-        iyz="-9.0633E-18"
-        izz="0.083945" />
+        ixx="2.73639159474837E-05"
+        ixy="-4.26051115035423E-07"
+        ixz="7.54720864413178E-09"
+        iyy="3.35044769883872E-06"
+        iyz="2.12843084673675E-09"
+        izz="2.66245899513959E-05" />
     </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://lbr_description/meshes/iiwa7/pole/pole_link3.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.89804 0.91765 0.92941 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://lbr_description/meshes/iiwa7/pole/pole_link3.STL" />
-      </geometry>
-    </collision>
+
   </link>
   <joint
-    name="pole_joint2"
+    name="camera_mount_to_camera"
     type="fixed">
     <origin
-      xyz="0.08 1.01 -0.08"
-      rpy="0 0 0" />
+      xyz="-0.0615 -0.045 -0.0545999999999999"
+      rpy="-3.14159265358979 -0.97738438111683 3.14159265358979" />
     <parent
-      link="pole_link2" />
+      link="camera_mount" />
     <child
-      link="pole_link3" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
-  <link
-    name="pole_link4">
-    <inertial>
-      <origin
-        xyz="-0.040013 -0.029602 -0.042411"
-        rpy="0 0 0" />
-      <mass
-        value="2.5894" />
-      <inertia
-        ixx="0.0034613"
-        ixy="-1.1553E-08"
-        ixz="-7.2089E-07"
-        iyy="0.031728"
-        iyz="-3.8836E-08"
-        izz="0.031631" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://lbr_description/meshes/iiwa7/pole/pole_link4.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.89804 0.91765 0.92941 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://lbr_description/meshes/iiwa7/pole/pole_link4.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="pole_joint3"
-    type="fixed">
-    <origin
-      xyz="0.04 -0.76 0.04"
-      rpy="-1.5708 0 0" />
-    <parent
-      link="pole_link3" />
-    <child
-      link="pole_link4" />
+      link="camera_base" />
     <axis
       xyz="0 0 0" />
   </joint>
@@ -268,17 +194,17 @@
     name="pole_link5_1">
     <inertial>
       <origin
-        xyz="1.0186E-07 0.0021716 0.018156"
+        xyz="1.01858932524679E-07 0.0181558532490662 -0.00217161507290353"
         rpy="0 0 0" />
       <mass
-        value="0.38712" />
+        value="0.387118723628718" />
       <inertia
-        ixx="0.00048365"
-        ixy="8.1163E-10"
-        ixz="8.7467E-10"
-        iyy="0.00098031"
-        iyz="-1.8644E-05"
-        izz="0.0012915" />
+        ixx="0.000483645582581851"
+        ixy="8.74673917311267E-10"
+        ixz="-8.11633891736856E-10"
+        iyy="0.00129147787044201"
+        iyz="1.86444604706742E-05"
+        izz="0.000980309144522967" />
     </inertial>
     <visual>
       <origin
@@ -286,12 +212,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lbr_description/meshes/iiwa7/pole/pole_link5_1.STL" />
+          filename="package://lbr_description/meshes/pole/pole_link5_1.STL" />
       </geometry>
       <material
         name="">
         <color
-          rgba="0.79216 0.81961 0.93333 1" />
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
       </material>
     </visual>
     <collision>
@@ -300,18 +226,18 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lbr_description/meshes/iiwa7/pole/pole_link5_1.STL" />
+          filename="package://lbr_description/meshes/pole/pole_link5_1.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="pole_joint4_1"
+    name="base_to_link5_1"
     type="fixed">
     <origin
-      xyz="0.17219 -0.041994 -0.028068"
-      rpy="2.3562 0 -1.5708" />
+      xyz="0.212228166945128 0.0800000000000014 0.233931963924182"
+      rpy="-2.35619449019234 0 -1.5707963267949" />
     <parent
-      link="pole_link4" />
+      link="base_link" />
     <child
       link="pole_link5_1" />
     <axis
@@ -321,17 +247,17 @@
     name="pole_link6_1">
     <inertial>
       <origin
-        xyz="-0.0045439 -6.9822E-08 0.0041116"
+        xyz="-0.00454392337969374 -6.98219862760308E-08 0.00411158104949072"
         rpy="0 0 0" />
       <mass
-        value="1.0978" />
+        value="1.09777541691262" />
       <inertia
-        ixx="0.0028737"
-        ixy="1.3696E-09"
-        ixz="-3.5008E-07"
-        iyy="0.0032668"
-        iyz="6.1389E-10"
-        izz="0.0061147" />
+        ixx="0.00287371687836862"
+        ixy="1.36957816426666E-09"
+        ixz="-3.50081671611511E-07"
+        iyy="0.00326678212891378"
+        iyz="6.13891620697415E-10"
+        izz="0.00611473943376407" />
     </inertial>
     <visual>
       <origin
@@ -339,12 +265,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lbr_description/meshes/iiwa7/pole/pole_link6_1.STL" />
+          filename="package://lbr_description/meshes/pole/pole_link6_1.STL" />
       </geometry>
       <material
         name="">
         <color
-          rgba="0.89804 0.91765 0.92941 1" />
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
       </material>
     </visual>
     <collision>
@@ -353,16 +279,16 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lbr_description/meshes/iiwa7/pole/pole_link6_1.STL" />
+          filename="package://lbr_description/meshes/pole/pole_link6_1.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="pole_joint5_1"
+    name="link5_1_to_link6_1"
     type="fixed">
     <origin
-      xyz="0 0 -0.01"
-      rpy="0 0 0" />
+      xyz="0 -0.00999999999999984 0"
+      rpy="-1.5707963267949 3.14159265359 0" />
     <parent
       link="pole_link5_1" />
     <child
@@ -374,17 +300,17 @@
     name="pole_link5_2">
     <inertial>
       <origin
-        xyz="1.0186E-07 0.018156 -0.0021716"
+        xyz="1.01858932538557E-07 0.00217161507290359 0.0181558532490663"
         rpy="0 0 0" />
       <mass
-        value="0.38712" />
+        value="0.387118723628719" />
       <inertia
-        ixx="0.00048365"
-        ixy="8.7467E-10"
-        ixz="-8.1163E-10"
-        iyy="0.0012915"
-        iyz="1.8644E-05"
-        izz="0.00098031" />
+        ixx="0.000483645582581851"
+        ixy="8.11633892283207E-10"
+        ixz="8.74673916686746E-10"
+        iyy="0.000980309144522967"
+        iyz="-1.86444604706741E-05"
+        izz="0.00129147787044201" />
     </inertial>
     <visual>
       <origin
@@ -392,12 +318,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lbr_description/meshes/iiwa7/pole/pole_link5_2.STL" />
+          filename="package://lbr_description/meshes/pole/pole_link5_2.STL" />
       </geometry>
       <material
         name="">
         <color
-          rgba="0.79216 0.81961 0.93333 1" />
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
       </material>
     </visual>
     <collision>
@@ -406,93 +332,125 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lbr_description/meshes/iiwa7/pole/pole_link5_2.STL" />
+          filename="package://lbr_description/meshes/pole/pole_link5_2.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="pole_joint4_2"
+    name="base_to_link5_2"
     type="fixed">
     <origin
-      xyz="-0.25223 -0.04 -0.028068"
-      rpy="-2.3562 0 1.5708" />
+      xyz="-0.212192176453971 0.0819943174630784 0.233931963924181"
+      rpy="2.35619449019234 0 1.5707963267949" />
     <parent
-      link="pole_link4" />
+      link="base_link" />
     <child
       link="pole_link5_2" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
-  <link
-    name="pole_link6_2">
-    <inertial>
-      <origin
-        xyz="-0.0045439 -6.9822E-08 0.0041116"
-        rpy="0 0 0" />
-      <mass
-        value="1.0978" />
-      <inertia
-        ixx="0.0028737"
-        ixy="1.3696E-09"
-        ixz="-3.5008E-07"
-        iyy="0.0032668"
-        iyz="6.1389E-10"
-        izz="0.0061147" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://lbr_description/meshes/iiwa7/pole/pole_link6_2.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.89804 0.91765 0.92941 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://lbr_description/meshes/iiwa7/pole/pole_link6_2.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="pole_joint5_2"
-    type="fixed">
-    <origin
-      xyz="0 -0.01 0"
-      rpy="-1.5708 3.14159 0" />
-    <parent
-      link="pole_link5_2" />
-    <child
-      link="pole_link6_2" />
     <axis
       xyz="0 0 0" />
   </joint>
   
-
+    <xacro:include filename="iiwa7_description.urdf.xacro"/>
+  
+    <xacro:arg name="base_frame" default="base_frame" />
+    <xacro:arg name="robot_name" default="left" />
+    <xacro:arg name="port_id" default="30200" />
+    <xacro:arg name="sim" default="true" />
+  
   <xacro:iiwa7 robot_name="$(arg robot_name)" port_id="$(arg port_id)" sim="$(arg sim)" />
   
   <joint
-    name="kuka_right_to_pole"
+    name="kuka_left_to_pole"
     type="fixed">
     <origin
       xyz="0 0 0"
       rpy="3.14159 0 0" />
     <parent
-      link="pole_link6_2" />
+      link="pole_link6_1" />
     <child
       link="link_0" />
     <axis
       xyz="0 0 0" />
   </joint>
   
+  <link
+    name="pole_link6_2">
+    <inertial>
+      <origin
+        xyz="-0.0045439233796938 -6.98219862760308E-08 0.00411158104949072"
+        rpy="0 0 0" />
+      <mass
+        value="1.09777541691262" />
+      <inertia
+        ixx="0.00287371687836863"
+        ixy="1.36957816851011E-09"
+        ixz="-3.50081671645068E-07"
+        iyy="0.00326678212891379"
+        iyz="6.13891620697415E-10"
+        izz="0.00611473943376408" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lbr_description/meshes/pole/pole_link6_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lbr_description/meshes/pole/pole_link6_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="link5_2_to_link6_2"
+    type="fixed">
+    <origin
+      xyz="0 0 -0.01"
+      rpy="0 0 0" />
+    <parent
+      link="pole_link5_2" />
+    <child
+      link="pole_link6_2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
   
-</robot>
+  
+  <xacro:arg name="use_nominal_extrinsics" default="false"/>
+  <xacro:arg name="add_plug" default="false" />
+  <xacro:arg name="use_mesh" default="true" />
+  <xacro:include filename="$(find lbr_description)/urdf/left_arm/_d435.urdf.xacro" />
+  
+  <link name="camera_base_link" />
+  <xacro:sensor_d435 parent="camera_base_link" use_nominal_extrinsics="$(arg use_nominal_extrinsics)" add_plug="$(arg add_plug)" use_mesh="$(arg use_mesh)">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </xacro:sensor_d435>
+  
+  <joint
+    name="realsense_mount"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="camera_base" />
+    <child
+      link="camera_base_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  
+  
+  </robot>
