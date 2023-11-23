@@ -16,13 +16,21 @@
     <!--joint between {base_frame} and link_0-->
   <joint name="$(arg base_frame)_joint" type="fixed">
       <origin
-          xyz="-0.2193 -0.27 0.281"
-          rpy="-0.7854 0 1.5708" />
+          xyz="-0.2197 -0.268 0.281"
+          rpy="-0.7853981630 0 1.5708" />
       <parent link="$(arg base_frame)" />
       <child link="link_0" />
   </joint>
   
-
+  <!--
+  <joint name="$(arg base_frame)_joint" type="fixed">
+      <origin
+          xyz="0 0 0"
+          rpy="-0.7853981630 0 0" />
+      <parent link="$(arg base_frame)" />
+      <child link="link_0" />
+  </joint>
+  -->
   
   <xacro:iiwa7 robot_name="$(arg robot_name)" port_id="$(arg port_id)" sim="$(arg sim)" />
 
