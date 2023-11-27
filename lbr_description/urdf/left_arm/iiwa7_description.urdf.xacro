@@ -284,13 +284,57 @@
 
         <link name="link_ee">
         </link>
+        
+        <joint name="ee_plates_joint" type="fixed">
+            <parent link="link_ee" />
+            <child link="ee_plates" />
+            <origin xyz="0 0 0.0105" rpy="0 0 0" />
+        </joint>
+        
+	<link name="ee_plates">
+      <visual>
+        <geometry>
+          <box size="0.091 0.091 0.021"/>
+        </geometry>
+        <material name="orange">
+          <color rgba="1 1 1 1"/>
+        </material>
+      </visual>
+      <collision>
+        <geometry>
+          <box size="0.091 0.091 0.021"/>
+        </geometry>
+      </collision>
+  	</link>
+  	
+  	<link name="ee_cylinder">
+      <visual>
+        <geometry>
+          <cylinder length="0.026" radius="0.04"/>
+        </geometry>
+        <material name="orange">
+          <color rgba="1 1 1 1"/>
+        </material>
+      </visual>
+      <collision>
+        <geometry>
+          <box size="0.091 0.091 0.021"/>
+        </geometry>
+      </collision>
+  	</link>
+  	
+  	<joint name="ee_cylinder_joint" type="fixed">
+            <parent link="ee_plates" />
+            <child link="ee_cylinder" />
+            <origin xyz="0 0 ${0.0105+0.013}" rpy="0 0 0" />
+        </joint>
 
         <xacro:robotiq-3f-gripper_articulated prefix=""/>
 
         <joint name="robotiq-3f-grippper_joint" type="fixed">
-            <parent link="link_ee" />
+            <parent link="ee_cylinder" />
             <child link="palm" />
-            <origin xyz="0 0 0.07" rpy="${PI / 2} 0 0" />
+            <origin xyz="0 0 0.0575" rpy="${PI / 2} 0 0" />
         </joint>
         
         
