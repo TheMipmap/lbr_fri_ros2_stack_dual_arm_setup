@@ -1,0 +1,21 @@
+# Default initial positions for left_arm's ros2_control fake system
+
+initial_positions:
+  A1: 0
+  A2: 0
+  A3: 0
+  A4: 0
+  A5: 0
+  A6: 0
+  A7: 0
+  finger_1_joint_1: 0
+  finger_1_joint_2: 0
+  finger_1_joint_3: 0
+  finger_2_joint_1: 0
+  finger_2_joint_2: 0
+  finger_2_joint_3: 0
+  finger_middle_joint_1: 0
+  finger_middle_joint_2: 0
+  finger_middle_joint_3: 0
+  palm_finger_1_joint: 0
+  palm_finger_2_joint: 0

@@ -25,6 +25,7 @@
     <!-- includes -->
     <xacro:include filename="$(find lbr_description)/gazebo/lbr.gazebo.xacro" />
     <xacro:include filename="$(find lbr_description)/ros2_control/lbr.ros2_control.xacro" />
+    <xacro:include filename="$(find lbr_description)/urdf/left_arm/robotiq-3f-gripper_articulated_macro.xacro" />
 
     <!-- robot as extracted via https://github.com/syuntoku14/fusion2urdf -->
     <xacro:macro name="iiwa7"
@@ -274,7 +275,7 @@
                 </geometry>
             </collision>
         </link>
-
+        
         <joint name="joint_ee" type="fixed">
             <parent link="link_7" />
             <child link="link_ee" />
@@ -283,6 +284,16 @@
 
         <link name="link_ee">
         </link>
+
+        <xacro:robotiq-3f-gripper_articulated prefix=""/>
+
+        <joint name="robotiq-3f-grippper_joint" type="fixed">
+            <parent link="link_ee" />
+            <child link="palm" />
+            <origin xyz="0 0 0.07" rpy="${PI / 2} 0 0" />
+        </joint>
+        
+        
 
         <xacro:lbr_gazebo robot_name="${robot_name}" />
         <!-- TODO: move modes to args, decouple urdf/gazebo/controls -->
