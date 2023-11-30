@@ -18,7 +18,7 @@
       <origin
           xyz="-0.2197 -0.268 0.281"
           rpy="-0.7853981630 0 1.5708" />
-      <parent link="$(arg base_frame)" />
+      <parent link="table" />
       <child link="link_0" />
   </joint>
   
